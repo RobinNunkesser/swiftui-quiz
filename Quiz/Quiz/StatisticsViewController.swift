@@ -10,17 +10,31 @@ import UIKit
 
 class StatisticsViewController : UIViewController {
     
+    // MARK: - Properties
+
+    var correctAnswers: Int!
+    var falseAnswers: Int!
+    var skippedQuestions: Int!
+    var answeredQuestions: Int {
+        return correctAnswers + falseAnswers + skippedQuestions
+    }
+
+    // MARK: IBOutlets
+    
     @IBOutlet weak var questionsLabel: UILabel!
     @IBOutlet weak var correctQuestionsLabel: UILabel!
     @IBOutlet weak var wrongQuestionsLabel: UILabel!
     @IBOutlet weak var skippedQuestionsLabel: UILabel!
 
+    // MARK: - Functions
+    // MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionsLabel.text = "\(StatisticsSingleton.instance.answeredQuestions)"
-        correctQuestionsLabel.text = "\(StatisticsSingleton.instance.correctAnswers)"
-        wrongQuestionsLabel.text = "\(StatisticsSingleton.instance.falseAnswers)"
-        skippedQuestionsLabel.text = "\(StatisticsSingleton.instance.skippedQuestions)"
+        questionsLabel.text = "\(answeredQuestions)"
+        correctQuestionsLabel.text = "\(correctAnswers!)"
+        wrongQuestionsLabel.text = "\(falseAnswers!)"
+        skippedQuestionsLabel.text = "\(skippedQuestions!)"
     }
 
 }

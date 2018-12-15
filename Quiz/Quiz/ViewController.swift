@@ -9,26 +9,46 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    var questions = [
+        ("Das Videospiel Donkey Kong sollte ursprünglich Popeye als Hauptfigur haben.", true),
+        ("Die Farbe Orange wurde nach der Frucht benannt.", true),
+        ("In der griechischen Mythologie ist Hera die Göttin der Ernte.", false),
+        ("Liechtenstein hat keinen eigenen Flughafen.", true),
+        ("Die meisten Subarus werden in China hergestellt.", false)]
+    
+    var index = 0
+    
+    var correctAnswers = 0
+    var falseAnswers = 0
+    var skippedQuestions = 0
+
+    // MARK: IBOutlets
 
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     
-    
-    var questions = [
-    ("Das Videospiel Donkey Kong sollte ursprünglich Popeye als Hauptfigur haben.", true),
-    ("Die Farbe Orange wurde nach der Frucht benannt.", true),
-    ("In der griechischen Mythologie ist Hera die Göttin der Ernte.", false),
-    ("Liechtenstein hat keinen eigenen Flughafen.", true),
-    ("Die meisten Subarus werden in China hergestellt.", false)]
-    
-    var index = 0
+    // MARK: - Functions
+    // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.text = questions[index].0
         self.answerLabel.alpha = 0.0
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let statisticsViewController = segue.destination
+            as! StatisticsViewController
+        statisticsViewController.correctAnswers = correctAnswers
+        statisticsViewController.falseAnswers = falseAnswers
+        statisticsViewController.skippedQuestions = skippedQuestions
+    }
 
+    // MARK: IBActions
+    
     @IBAction func answerTrue(_ sender: UIButton) {
         evaluateAnswer(answer: true)
         nextQuestion()
@@ -41,16 +61,18 @@ class ViewController: UIViewController {
     
     @IBAction func skip(_ sender: UIButton) {
         nextQuestion()
-        StatisticsSingleton.instance.skippedQuestions += 1
+        skippedQuestions += 1
     }
+    
+    // MARK: Other Functions
     
     func evaluateAnswer(answer: Bool) {
         var text = "Richtig!"
         if (questions[index].1 != answer) {
             text = "Falsch!"
-            StatisticsSingleton.instance.falseAnswers += 1
+            falseAnswers += 1
         } else {
-            StatisticsSingleton.instance.correctAnswers += 1
+            correctAnswers += 1
         }
         answerLabel.text = text
         UIView.animate(withDuration: 1) {
@@ -60,7 +82,6 @@ class ViewController: UIViewController {
     }
     
     func nextQuestion() {
-        StatisticsSingleton.instance.answeredQuestions += 1
         index = (index + 1) % questions.count
         questionLabel.text = questions[index].0
     }
