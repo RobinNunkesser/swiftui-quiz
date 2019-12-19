@@ -2,8 +2,8 @@
 //  QuizTests.swift
 //  QuizTests
 //
-//  Created by Prof. Dr. Nunkesser, Robin on 15.10.18.
-//  Copyright © 2018 Hochschule Hamm-Lippstadt. All rights reserved.
+//  Created by Prof. Dr. Nunkesser, Robin on 19.12.19.
+//  Copyright © 2019 Hochschule Hamm-Lippstadt. All rights reserved.
 //
 
 import XCTest
