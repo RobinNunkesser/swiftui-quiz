@@ -17,6 +17,7 @@ struct ContentView: View {
                 Spacer()
                 Text(viewModel.question)
                     .font(.headline)
+                    .animation(.easeIn)
                 Spacer()
                 Text(viewModel.answer)
                     .opacity(viewModel.resultOpacity)
@@ -26,15 +27,18 @@ struct ContentView: View {
                     Button(action: viewModel.sendFalseAsAnswer) {
                         Text("Falsch")
                     }
+                    .disabled(viewModel.buttonsDisabled)
                     Spacer()
                     Button(action: viewModel.sendTrueAsAnswer) {
                         Text("Richtig")
                     }
+                    .disabled(viewModel.buttonsDisabled)
                     Spacer()
                 }
                 Button(action: viewModel.skipQuestion) {
                     Text("Überspringen")
                 }
+                .disabled(viewModel.buttonsDisabled)
             }
             .padding(.all)
             .navigationBarTitle("Quiz")

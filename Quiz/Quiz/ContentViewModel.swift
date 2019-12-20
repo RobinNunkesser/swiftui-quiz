@@ -17,6 +17,7 @@ final class ContentViewModel : ObservableObject {
     @Published var question = ""
     @Published var answer = "XXXXXXXXXX"
     @Published var resultOpacity = 0.0
+    @Published var buttonsDisabled = false
 
     var correctAnswers = 0
     var wrongAnswers = 0
@@ -37,6 +38,7 @@ final class ContentViewModel : ObservableObject {
     func nextQuestion() {
         index = (index + 1) % questions.count
         resultOpacity = 0.0
+        buttonsDisabled = false
     }
     
     func sendTrueAsAnswer() {
@@ -48,6 +50,7 @@ final class ContentViewModel : ObservableObject {
     }
     
     func evaluateAnswer(answer: Bool) {
+        buttonsDisabled = true
         resultOpacity = 1.0
         if (questions[index].1 == answer) {
             self.answer = "Richtig!"
