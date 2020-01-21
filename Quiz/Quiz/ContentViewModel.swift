@@ -41,14 +41,6 @@ final class ContentViewModel : ObservableObject {
         buttonsDisabled = false
     }
     
-    func sendTrueAsAnswer() {
-        evaluateAnswer(answer: true)
-    }
-    
-    func sendFalseAsAnswer() {
-        evaluateAnswer(answer: false)
-    }
-    
     func evaluateAnswer(answer: Bool) {
         buttonsDisabled = true
         resultOpacity = 1.0

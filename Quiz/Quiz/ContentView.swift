@@ -24,12 +24,12 @@ struct ContentView: View {
                     .animation(.easeIn)
                 HStack {
                     Spacer()
-                    Button(action: viewModel.sendFalseAsAnswer) {
+                    Button(action: { self.viewModel.evaluateAnswer(answer: false) }) {
                         Text("Falsch")
                     }
                     .disabled(viewModel.buttonsDisabled)
                     Spacer()
-                    Button(action: viewModel.sendTrueAsAnswer) {
+                    Button(action: { self.viewModel.evaluateAnswer(answer: true) }) {
                         Text("Richtig")
                     }
                     .disabled(viewModel.buttonsDisabled)

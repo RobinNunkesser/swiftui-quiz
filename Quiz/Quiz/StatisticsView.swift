@@ -30,6 +30,7 @@ struct StatisticsView: View {
                     Text("\(viewModel.skippedQuestions)")
                         .multilineTextAlignment(.trailing)
                 }
+                Spacer()
             }
             .padding(.all)
             .navigationBarTitle("Statistics")
