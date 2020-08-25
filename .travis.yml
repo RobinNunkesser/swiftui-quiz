@@ -10,6 +10,9 @@ env:
 
 script:
     - cd $PROJECT
-    - set -o pipefail && travis_wait xcodebuild test -enableCodeCoverage YES -scheme $PROJECT -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11' ONLY_ACTIVE_ARCH=NO | xcpretty
+    - set -o pipefail && travis_wait xcodebuild test -enableCodeCoverage YES 
+      -scheme $PROJECT -sdk iphonesimulator 
+      -destination 'platform=iOS Simulator,name=iPhone 11' 
+      ONLY_ACTIVE_ARCH=NO | xcpretty
     - cd ..
 
