@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run build script
         run: ./.github/scripts/build.sh
-        shell: bash
+        shell: sh
