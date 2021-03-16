@@ -9,7 +9,7 @@ final class ContentViewModel : ObservableObject {
     ("Liechtenstein hat keinen eigenen Flughafen.", true),
     ("Die meisten Subarus werden in China hergestellt.", false)]
     
-    @Published var index = 0 {
+    var index = 0 {
         didSet {
             question = questions[index].0
         }
