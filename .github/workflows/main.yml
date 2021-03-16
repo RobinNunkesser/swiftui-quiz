@@ -8,8 +8,6 @@ jobs:
         project: ['Quiz']
     steps:
       - uses: actions/checkout@v2
-      - run: pwd
-      - run: ls -a
-      - run: cd ${{ matrix.project }}
-      - run: xcodebuild test -enableCodeCoverage YES -scheme ${{ matrix.project }} -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11' ONLY_ACTIVE_ARCH=NO
-      - run: cd ..
+      - name: Run build script
+        run: ./.github/scripts/build.sh
+        shell: zsh
