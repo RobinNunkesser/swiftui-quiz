@@ -7,6 +7,7 @@ platform :ios do
   desc "Run tests"
   lane :tests do
   run_tests(workspace: "Quiz.xcworkspace",
+            devices: ["iPhone 6s", "iPad Air"],
             scheme: "Quiz")
   end
 end
