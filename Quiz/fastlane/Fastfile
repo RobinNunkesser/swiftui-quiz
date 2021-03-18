@@ -1,0 +1,9 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Run tests"
+  lane :tests do
+  run_tests(workspace: "Quiz.xcworkspace",
+            scheme: "Quiz")
+  end
+end
