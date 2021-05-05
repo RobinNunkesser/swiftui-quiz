@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel : ContentViewModel
-
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 8.0) {
@@ -43,9 +43,9 @@ struct ContentView: View {
             .padding(.all)
             .navigationBarTitle("Quiz")
             .navigationBarItems(trailing:
-                NavigationLink(destination: StatisticsView().environmentObject(viewModel)) {
-                    Text("Statistics")
-                }
+                                    NavigationLink(destination: StatisticsView()) {
+                                        Text("Statistics")
+                                    }
             )
         }
     }
@@ -53,6 +53,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(ContentViewModel())
+        Group {
+            ContentView().environmentObject(ContentViewModel())
+            ContentView().previewDevice("iPhone 12 Pro Max").environmentObject(ContentViewModel())
+        }
     }
 }
