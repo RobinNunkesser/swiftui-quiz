@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F4972E52458D13B002939AE /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4972E42458D13B002939AE /* StatisticsView.swift */; };
-		6F89EE1523AB8E7C00665338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89EE1423AB8E7C00665338 /* AppDelegate.swift */; };
-		6F89EE1723AB8E7C00665338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89EE1623AB8E7C00665338 /* SceneDelegate.swift */; };
+		6F7991412761FAB200087D4C /* QuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7991402761FAB200087D4C /* QuizApp.swift */; };
 		6F89EE1923AB8E7C00665338 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89EE1823AB8E7C00665338 /* ContentView.swift */; };
 		6F89EE1B23AB8E8200665338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F89EE1A23AB8E8200665338 /* Assets.xcassets */; };
 		6F89EE1E23AB8E8200665338 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F89EE1D23AB8E8200665338 /* Preview Assets.xcassets */; };
@@ -30,9 +29,8 @@
 
 /* Begin PBXFileReference section */
 		6F4972E42458D13B002939AE /* StatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		6F7991402761FAB200087D4C /* QuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizApp.swift; sourceTree = "<group>"; };
 		6F89EE1123AB8E7C00665338 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F89EE1423AB8E7C00665338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F89EE1623AB8E7C00665338 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6F89EE1823AB8E7C00665338 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6F89EE1A23AB8E8200665338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F89EE1D23AB8E8200665338 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -83,8 +81,6 @@
 		6F89EE1323AB8E7C00665338 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				6F89EE1423AB8E7C00665338 /* AppDelegate.swift */,
-				6F89EE1623AB8E7C00665338 /* SceneDelegate.swift */,
 				6F89EE1823AB8E7C00665338 /* ContentView.swift */,
 				6F89EE1A23AB8E8200665338 /* Assets.xcassets */,
 				6F89EE1F23AB8E8200665338 /* LaunchScreen.storyboard */,
@@ -92,6 +88,7 @@
 				6F89EE1C23AB8E8200665338 /* Preview Content */,
 				6F89EE3823AB917300665338 /* ContentViewModel.swift */,
 				6F4972E42458D13B002939AE /* StatisticsView.swift */,
+				6F7991402761FAB200087D4C /* QuizApp.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -214,9 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F89EE1523AB8E7C00665338 /* AppDelegate.swift in Sources */,
 				6F4972E52458D13B002939AE /* StatisticsView.swift in Sources */,
-				6F89EE1723AB8E7C00665338 /* SceneDelegate.swift in Sources */,
+				6F7991412761FAB200087D4C /* QuizApp.swift in Sources */,
 				6F89EE1923AB8E7C00665338 /* ContentView.swift in Sources */,
 				6F89EE3923AB917300665338 /* ContentViewModel.swift in Sources */,
 			);
@@ -302,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -356,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
